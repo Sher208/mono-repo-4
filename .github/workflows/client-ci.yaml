@@ -1,18 +1,15 @@
 name: Deploy Client Application
 
 on:
-    workflow_dispatch:
-        inputs:
-            version:
-                description: Manual Trigger
     push:
         branches: [main]
         paths: ['apps/client/**']
     pull_request:
         branches: [main]
+    workflow_dispatch:
 
 jobs:
-    build:
+    build-client:
         runs-on: ubuntu-latest
         timeout-minutes: 5
 
@@ -26,16 +23,16 @@ jobs:
                   node-version: 16
 
             - name: Install Dependencies
-              run: npm ci
+              run: npm ci --production
 
             - name: Run Client Test Cases
               run: npm run test:client
 
-            - name: Build
+            - name: Build Client Application
               run: npm run build:client
 
-            - name: Deploy
-              uses: JamesIves/github-pages-deploy-action@v4.3.4
-              with:
-                  folder: dist/apps/client
-                  branch: gh-pages
+            # - name: Deploy
+            #   uses: JamesIves/github-pages-deploy-action@v4.3.4
+            #   with:
+            #       folder: dist/apps/client
+            #       branch: gh-pages
