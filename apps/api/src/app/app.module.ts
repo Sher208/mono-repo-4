@@ -1,4 +1,4 @@
-import { CoreModule } from '@mono-repo-4/core';
+import { CoreModule } from '@library/core';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
