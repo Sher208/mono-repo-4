@@ -29,10 +29,10 @@ jobs:
               run: npm ci
 
             - name: Run client test case
-              run: npm run lint:client
+              run: npm run test:client
 
             - name: Build
-              run: npm run build
+              run: npm run build:client
 
             - name: Deploy
               uses: JamesIves/github-pages-deploy-action@v4.3.4
