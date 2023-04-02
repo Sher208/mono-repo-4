@@ -3,6 +3,7 @@ import { Button } from '@library/storybook';
 export function StoryBook() {
   return (
     <div>
+      <div>Hello</div>
       <Button className="border-indigo-500 bg-indigo-500 hover:bg-indigo-600 ">
         Primary
       </Button>
