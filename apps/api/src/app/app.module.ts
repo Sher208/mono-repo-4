@@ -5,17 +5,17 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 @Module({
-  imports: [
-    CoreModule,
-    TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: './db.sqlite',
-      entities: [],
-      synchronize: true,
-      logging: 'all',
-    }),
-  ],
-  controllers: [AppController],
-  providers: [AppService],
+	imports: [
+		CoreModule,
+		TypeOrmModule.forRoot({
+			type: 'sqlite',
+			database: './db.sqlite',
+			entities: [],
+			synchronize: true,
+			logging: 'all'
+		})
+	],
+	controllers: [AppController],
+	providers: [AppService]
 })
 export class AppModule {}
