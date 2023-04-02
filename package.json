@@ -8,10 +8,10 @@
 		"start:api": "nx run api:serve",
 		"start:storybook": "nx run storybook:storybook",
 		"start:client-app": "nx run-many --parallel --target=serve --projects=client,api",
-		"test:client": "nx test client",
-		"test:api": "nx test api",
-		"build:client": "nx build client:build:production",
-		"build:api": "nx build api:build:production"
+		"test:client": "nx run client:test",
+		"test:api": "nx run api:test",
+		"build:client": "nx run client:build:production && nx run client:export",
+		"build:api": "nx run api:build:production"
 	},
 	"private": true,
 	"dependencies": {
