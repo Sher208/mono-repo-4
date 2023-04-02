@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timout-minutes: 5
+    timeout-minutes: 5
 
     steps:
       - name: Cloning Repository
