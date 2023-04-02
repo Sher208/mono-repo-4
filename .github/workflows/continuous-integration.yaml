@@ -28,7 +28,7 @@ jobs:
             - name: Install Dependencies
               run: npm ci
 
-            - name: Run client test case
+            - name: Run Client Test Cases
               run: npm run test:client
 
             - name: Build
@@ -37,5 +37,5 @@ jobs:
             - name: Deploy
               uses: JamesIves/github-pages-deploy-action@v4.3.4
               with:
-                  folder: build
+                  folder: dist/apps/client
                   branch: gh-pages
